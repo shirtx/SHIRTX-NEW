@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VIP settings v2</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080b12;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.card{width:min(94%,440px);background:#111722;border:1px solid #273246;border-radius:22px;padding:26px;box-shadow:0 18px 50px #0008}
+h1{text-align:center;margin:0 0 8px;font-size:28px}.sub{text-align:center;color:#8d99aa;margin-bottom:22px}
+label{display:block;margin:14px 0 7px;color:#cbd5e1}input,select{width:100%;padding:13px;border-radius:12px;border:1px solid #334155;background:#0b1019;color:#fff;font-size:16px}
+button{width:100%;padding:14px;border:0;border-radius:12px;margin-top:12px;font-size:16px;font-weight:700;cursor:pointer;background:#20c76a;color:#06120a}
+button.secondary{background:#243044;color:#fff}.hidden{display:none}.msg{text-align:center;margin-top:12px;color:#ff6978;min-height:20px}
+.wave{height:160px;margin-top:10px;border-radius:14px;background:#0a0f18;border:1px solid #273246;overflow:hidden}
+.wave svg{width:100%;height:100%}.wave{position:relative}.wave:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#20c76a18,transparent);transform:translateX(-100%);animation:scan 2.4s linear infinite;pointer-events:none}.wave path{filter:drop-shadow(0 0 5px #20c76a);stroke-dasharray:10 7;animation:flow 1.2s linear infinite,glow 1.8s ease-in-out infinite alternate}@keyframes flow{to{stroke-dashoffset:-34}}@keyframes glow{from{filter:drop-shadow(0 0 3px #20c76a)}to{filter:drop-shadow(0 0 11px #20c76a)}}@keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}.wave-pulse{animation:wavePulse .65s cubic-bezier(.2,.8,.2,1)}@keyframes wavePulse{0%{transform:scale(.985);box-shadow:0 0 0 #20c76a00}45%{transform:scale(1.012);box-shadow:0 0 22px #20c76a30}100%{transform:scale(1);box-shadow:0 0 0 #20c76a00}}.saved{text-align:center;color:#6ee7a0;margin-top:12px;min-height:20px}
+.settings{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+.setting{background:#0b1019;border:1px solid #273246;border-radius:11px;padding:10px;text-align:center}
+.setting b{display:block;font-size:20px;margin-top:5px;padding-bottom:5px}.valueBar{height:6px;margin:8px 2px 0;background:#182333;border-radius:99px;overflow:hidden}.valueBar i{display:block;height:100%;width:0;background:#20c76a;border-radius:99px;box-shadow:0 0 8px #20c76a;transition:width .6s cubic-bezier(.22,.61,.36,1),transform .12s ease}.valueBar i.shake{animation:barShake .28s ease-in-out 3}@keyframes barShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}50%{transform:translateX(3px)}75%{transform:translateX(-2px)}
+.setting small{display:block;color:#8d99aa;margin-top:5px}.note{text-align:center;color:#718096;font-size:12px;margin-top:16px}
+button:disabled{opacity:.5;cursor:not-allowed}select.invalid{border-color:#ff6978}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:9999;background:#243044;color:#fff;padding:6px 12px;border-radius:999px;font:12px Arial,sans-serif;opacity:.9">โหมดทดลอง</div>
+<div class="card">
+<section id="login">
+<h1>VIP settings v2</h1><div class="sub">เข้าสู่ระบบ</div>
+<label for="pin">รหัสผ่าน</label>
+<input id="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="ใส่รหัส 4 หลัก">
+<button type="button" id="loginBtn">อนุญาต</button>
+<div id="msg" class="msg"></div>
+</section>
+
+<section id="menu" class="hidden">
+<h1>VIP settings v2</h1><div class="sub">Free Fire Random Settings</div>
+
+<label for="phone">เลือกรุ่นมือถือ <span style="color:#20c76a">*</span></label>
+<select id="phone">
+<option value="">-- กรุณาเลือกรุ่นมือถือก่อน --</option>
+<option>Xiaomi</option><option>Samsung</option><option>OPPO</option><option>vivo</option><option>realme</option><option>Android ทั่วไป</option>
+</select>
+
+<label>การสุ่มการตั้งค่า Free Fire</label>
+<div class="wave">
+<svg viewBox="0 0 400 160" preserveAspectRatio="none" aria-label="กราฟคลื่นการตั้งค่า">
+<line x1="0" y1="10" x2="400" y2="10" stroke="#334155" stroke-width="1"/>
+<line x1="0" y1="80" x2="400" y2="80" stroke="#334155" stroke-width="1"/>
+<line x1="0" y1="150" x2="400" y2="150" stroke="#334155" stroke-width="1"/>
+<text x="6" y="25" fill="#8d99aa" font-size="12">200</text>
+<text x="6" y="95" fill="#8d99aa" font-size="12">100</text>
+<text x="6" y="155" fill="#8d99aa" font-size="12">0</text>
+<path id="wavePath" fill="none" stroke="#20c76a" stroke-width="4" d="M0 80 C50 30 90 130 140 80 S230 30 280 80 S360 130 400 80"/>
+<g id="waveLabels"></g>
+</svg>
+</div>
+
+<div class="settings">
+<div class="setting">ทั่วไป<b id="general">--</b><div class="valueBar"><i id="bar-general"></i></div><small>ค่าตั้งค่า</small></div>
+<div class="setting">จุดแดง<b id="red">--</b><div class="valueBar"><i id="ba
