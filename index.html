@@ -9,248 +9,232 @@
 *{box-sizing:border-box}
 
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#080b12;
- color:#fff;
- min-height:100vh;
- display:flex;
- align-items:center;
- justify-content:center
+margin:0;
+font-family:Arial,sans-serif;
+background:#080b12;
+color:#fff;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center
 }
 
 .card{
- width:min(94%,440px);
- background:#111722;
- border:1px solid #273246;
- border-radius:22px;
- padding:26px;
- box-shadow:0 18px 50px #0008
+width:min(94%,440px);
+background:#111722;
+border:1px solid #273246;
+border-radius:22px;
+padding:26px;
+box-shadow:0 18px 50px #0008
 }
 
 h1{
- text-align:center;
- margin:0 0 8px;
- font-size:28px
+text-align:center;
+margin:0 0 8px;
+font-size:28px
 }
 
 .sub{
- text-align:center;
- color:#8d99aa;
- margin-bottom:22px
+text-align:center;
+color:#8d99aa;
+margin-bottom:22px
 }
 
 label{
- display:block;
- margin:14px 0 7px;
- color:#cbd5e1
+display:block;
+margin:14px 0 7px;
+color:#cbd5e1
 }
 
 input,select{
- width:100%;
- padding:13px;
- border-radius:12px;
- border:1px solid #334155;
- background:#0b1019;
- color:#fff;
- font-size:16px
+width:100%;
+padding:13px;
+border-radius:12px;
+border:1px solid #334155;
+background:#0b1019;
+color:#fff;
+font-size:16px
 }
 
 button{
- width:100%;
- padding:14px;
- border:0;
- border-radius:12px;
- margin-top:12px;
- font-size:16px;
- font-weight:700;
- cursor:pointer;
- background:#20c76a;
- color:#06120a
+width:100%;
+padding:14px;
+border:0;
+border-radius:12px;
+margin-top:12px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+background:#20c76a;
+color:#06120a
 }
 
 button.secondary{
- background:#243044;
- color:#fff
+background:#243044;
+color:#fff
 }
 
 .hidden{
- display:none
+display:none
 }
 
 .msg{
- text-align:center;
- margin-top:12px;
- color:#ff6978;
- min-height:20px
+text-align:center;
+margin-top:12px;
+color:#ff6978;
+min-height:20px
 }
 
 .wave{
- height:160px;
- margin-top:10px;
- border-radius:14px;
- background:#0a0f18;
- border:1px solid #273246;
- overflow:hidden;
- position:relative
+height:160px;
+margin-top:10px;
+border-radius:14px;
+background:#0a0f18;
+border:1px solid #273246;
+overflow:hidden;
+position:relative
 }
 
 .wave svg{
- width:100%;
- height:100%
+width:100%;
+height:100%
 }
 
 .wave:after{
- content:'';
- position:absolute;
- inset:0;
- background:linear-gradient(
-  90deg,
-  transparent,
-  #20c76a18,
-  transparent
- );
- transform:translateX(-100%);
- animation:scan 2.4s linear infinite;
- pointer-events:none
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(
+90deg,
+transparent,
+#20c76a18,
+transparent
+);
+transform:translateX(-100%);
+animation:scan 2.4s linear infinite;
+pointer-events:none
 }
 
 .wave path{
- filter:drop-shadow(0 0 5px #20c76a);
- stroke-dasharray:10 7;
- animation:
-  flow 1.2s linear infinite,
-  glow 1.8s ease-in-out infinite alternate
+filter:drop-shadow(0 0 5px #20c76a);
+stroke-dasharray:10 7;
+animation:
+flow 1.2s linear infinite,
+glow 1.8s ease-in-out infinite alternate
 }
 
 @keyframes flow{
- to{stroke-dashoffset:-34}
+to{
+stroke-dashoffset:-34
+}
 }
 
 @keyframes glow{
- from{filter:drop-shadow(0 0 3px #20c76a)}
- to{filter:drop-shadow(0 0 11px #20c76a)}
+from{
+filter:drop-shadow(0 0 3px #20c76a)
+}
+to{
+filter:drop-shadow(0 0 11px #20c76a)
+}
 }
 
 @keyframes scan{
- 0%{transform:translateX(-100%)}
- 100%{transform:translateX(100%)}
+0%{
+transform:translateX(-100%)
+}
+100%{
+transform:translateX(100%)
+}
 }
 
 .wave-pulse{
- animation:wavePulse .65s cubic-bezier(.2,.8,.2,1)
+animation:wavePulse .65s cubic-bezier(.2,.8,.2,1)
 }
 
 @keyframes wavePulse{
- 0%{
-  transform:scale(.985);
-  box-shadow:0 0 0 #20c76a00
- }
- 45%{
-  transform:scale(1.012);
-  box-shadow:0 0 22px #20c76a30
- }
- 100%{
-  transform:scale(1);
-  box-shadow:0 0 0 #20c76a00
- }
+0%{
+transform:scale(.985);
+box-shadow:0 0 0 #20c76a00
+}
+45%{
+transform:scale(1.012);
+box-shadow:0 0 22px #20c76a30
+}
+100%{
+transform:scale(1);
+box-shadow:0 0 0 #20c76a00
+}
 }
 
 .saved{
- text-align:center;
- color:#6ee7a0;
- margin-top:12px;
- min-height:20px
+text-align:center;
+color:#6ee7a0;
+margin-top:12px;
+min-height:20px
 }
 
 .settings{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:9px;
- margin-top:10px
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:9px;
+margin-top:10px
 }
 
 .setting{
- background:#0b1019;
- border:1px solid #273246;
- border-radius:11px;
- padding:10px;
- text-align:center
+background:#0b1019;
+border:1px solid #273246;
+border-radius:11px;
+padding:10px;
+text-align:center
 }
 
 .setting b{
- display:block;
- font-size:20px;
- margin-top:5px;
- padding-bottom:5px
+display:block;
+font-size:20px;
+margin-top:5px;
+padding-bottom:5px
 }
 
 .valueBar{
- height:6px;
- margin:8px 2px 0;
- background:#182333;
- border-radius:99px;
- overflow:hidden
+height:6px;
+margin:8px 2px 0;
+background:#182333;
+border-radius:99px;
+overflow:hidden
 }
 
 .valueBar i{
- display:block;
- height:100%;
- width:0;
- background:#20c76a;
- border-radius:99px;
- box-shadow:0 0 8px #20c76a;
- transition:
-  width .6s cubic-bezier(.22,.61,.36,1),
-  transform .12s ease
-}
-
-.valueBar i.shake{
- animation:barShake .28s ease-in-out 3
-}
-
-@keyframes barShake{
- 0%,100%{transform:translateX(0)}
- 25%{transform:translateX(-2px)}
- 50%{transform:translateX(3px)}
- 75%{transform:translateX(-2px)}
+display:block;
+height:100%;
+width:0;
+background:#20c76a;
+border-radius:99px;
+box-shadow:0 0 8px #20c76a;
+transition:
+width .6s cubic-bezier(.22,.61,.36,1),
+transform .12s ease
 }
 
 .setting small{
- display:block;
- color:#8d99aa;
- margin-top:5px
+display:block;
+color:#8d99aa;
+margin-top:5px
 }
 
 .note{
- text-align:center;
- color:#718096;
- font-size:12px;
- margin-top:16px
+text-align:center;
+color:#718096;
+font-size:12px;
+margin-top:16px
 }
 
 button:disabled{
- opacity:.5;
- cursor:not-allowed
+opacity:.5;
+cursor:not-allowed
 }
 
 select.invalid{
- border-color:#ff6978
-}
-
-.status{
- text-align:center;
- color:#6ee7a0;
- margin-top:14px;
- min-height:20px;
- font-weight:700
-}
-
-.demo{
- text-align:center;
- color:#718096;
- font-size:11px;
- margin-top:8px
+border-color:#ff6978
 }
 </style>
 </head>
@@ -275,7 +259,6 @@ opacity:.9
 
 <div class="card">
 
-<!-- LOGIN -->
 <section id="login">
 
 <h1>VIP settings v2</h1>
@@ -289,34 +272,27 @@ opacity:.9
 </label>
 
 <input
- id="pin"
- type="password"
- inputmode="numeric"
- maxlength="4"
- autocomplete="off"
- placeholder="ใส่รหัส 4 หลัก"
+id="pin"
+type="password"
+inputmode="numeric"
+maxlength="4"
+autocomplete="off"
+placeholder="ใส่รหัส 4 หลัก"
 >
 
 <button
- type="button"
- id="loginBtn"
+type="button"
+id="loginBtn"
 >
 อนุญาต
 </button>
 
-<div
- id="msg"
- class="msg"
-></div>
+<div id="msg" class="msg"></div>
 
 </section>
 
 
-<!-- MENU -->
-<section
- id="menu"
- class="hidden"
->
+<section id="menu" class="hidden">
 
 <h1>
 VIP settings v2
@@ -356,71 +332,71 @@ Free Fire Random Settings
 <div class="wave">
 
 <svg
- viewBox="0 0 400 160"
- preserveAspectRatio="none"
- aria-label="กราฟคลื่นการตั้งค่า"
+viewBox="0 0 400 160"
+preserveAspectRatio="none"
+aria-label="กราฟคลื่นการตั้งค่า"
 >
 
 <line
- x1="0"
- y1="10"
- x2="400"
- y2="10"
- stroke="#334155"
- stroke-width="1"
+x1="0"
+y1="10"
+x2="400"
+y2="10"
+stroke="#334155"
+stroke-width="1"
 />
 
 <line
- x1="0"
- y1="80"
- x2="400"
- y2="80"
- stroke="#334155"
- stroke-width="1"
+x1="0"
+y1="80"
+x2="400"
+y2="80"
+stroke="#334155"
+stroke-width="1"
 />
 
 <line
- x1="0"
- y1="150"
- x2="400"
- y2="150"
- stroke="#334155"
- stroke-width="1"
+x1="0"
+y1="150"
+x2="400"
+y2="150"
+stroke="#334155"
+stroke-width="1"
 />
 
 <text
- x="6"
- y="25"
- fill="#8d99aa"
- font-size="12"
+x="6"
+y="25"
+fill="#8d99aa"
+font-size="12"
 >
 200
 </text>
 
 <text
- x="6"
- y="95"
- fill="#8d99aa"
- font-size="12"
+x="6"
+y="95"
+fill="#8d99aa"
+font-size="12"
 >
 100
 </text>
 
 <text
- x="6"
- y="155"
- fill="#8d99aa"
- font-size="12"
+x="6"
+y="155"
+fill="#8d99aa"
+font-size="12"
 >
 0
 </text>
 
 <path
- id="wavePath"
- fill="none"
- stroke="#20c76a"
- stroke-width="4"
- d="M0 80 C50 30 90 130 140 80 S230 30 280 80 S360 130 400 80"
+id="wavePath"
+fill="none"
+stroke="#20c76a"
+stroke-width="4"
+d="M0 80 C50 30 90 130 140 80 S230 30 280 80 S360 130 400 80"
 />
 
 <g id="waveLabels"></g>
@@ -453,20 +429,10 @@ Free Fire Random Settings
 
 
 <div class="setting">
-กล้อง 2x
-<b id="scope2">--</b>
+สโคป
+<b id="scope">--</b>
 <div class="valueBar">
-<i id="bar-scope2"></i>
-</div>
-<small>ค่าตั้งค่า</small>
-</div>
-
-
-<div class="setting">
-กล้อง 4x
-<b id="scope4">--</b>
-<div class="valueBar">
-<i id="bar-scope4"></i>
+<i id="bar-scope"></i>
 </div>
 <small>ค่าตั้งค่า</small>
 </div>
@@ -481,54 +447,31 @@ AWM
 <small>ค่าตั้งค่า</small>
 </div>
 
-
-<div class="setting">
-มองรอบตัว
-<b id="look">--</b>
-<div class="valueBar">
-<i id="bar-look"></i>
-</div>
-<small>ค่าตั้งค่า</small>
-</div>
-
 </div>
 
 
 <button
- type="button"
- id="randomBtn"
+type="button"
+id="randomBtn"
 >
 สุ่มการตั้งค่า
 </button>
 
-
 <button
- type="button"
- class="secondary"
- id="resetBtn"
+type="button"
+id="resetBtn"
+class="secondary"
 >
 รีเซ็ต
 </button>
 
-
 <div
- id="saved"
- class="saved"
+id="saved"
+class="saved"
 ></div>
 
-<div
- id="status"
- class="status"
->
-STATUS : READY
-</div>
-
-<div class="demo">
-UI Demo — ไม่มีการแก้ไขไฟล์เกมหรือระบบเกม
-</div>
-
 <div class="note">
-เลือกมือถือก่อน แล้วกดสุ่มการตั้งค่า
+เลือกมือถือก่อนสุ่มการตั้งค่า
 </div>
 
 </section>
@@ -538,312 +481,186 @@ UI Demo — ไม่มีการแก้ไขไฟล์เกมหร�
 
 <script>
 
-/* =========================
-   PASSWORD
-   รหัสผ่านคือ 4321
-========================= */
+// รหัสผ่านสำหรับหน้าเข้าสู่ระบบ
+const PASSWORD = "4321";
 
-const CORRECT_PASSWORD = "4321";
+const pin = document.getElementById("pin");
+const loginBtn = document.getElementById("loginBtn");
+const msg = document.getElementById("msg");
 
+const login = document.getElementById("login");
+const menu = document.getElementById("menu");
 
-/* =========================
-   LOGIN
-========================= */
+const phone = document.getElementById("phone");
 
-const pin =
-document.getElementById("pin");
+const randomBtn = document.getElementById("randomBtn");
+const resetBtn = document.getElementById("resetBtn");
 
-const loginBtn =
-document.getElementById("loginBtn");
-
-const login =
-document.getElementById("login");
-
-const menu =
-document.getElementById("menu");
-
-const msg =
-document.getElementById("msg");
+const saved = document.getElementById("saved");
 
 
-function loginCheck(){
+// เข้าสู่ระบบ
+loginBtn.addEventListener("click", function(){
 
- const value = pin.value.trim();
+const value = pin.value.trim();
 
- if(value === CORRECT_PASSWORD){
+if(value === PASSWORD){
 
-  login.classList.add("hidden");
+login.classList.add("hidden");
+menu.classList.remove("hidden");
 
-  menu.classList.remove("hidden");
+msg.textContent = "";
 
-  msg.textContent = "";
+}else{
 
- }else{
+msg.textContent = "รหัสผ่านไม่ถูกต้อง";
 
-  msg.textContent =
-  "รหัสผ่านไม่ถูกต้อง";
+}
 
-  pin.value = "";
+});
 
- }
+
+// กด Enter เพื่อเข้าสู่ระบบ
+pin.addEventListener("keydown", function(e){
+
+if(e.key === "Enter"){
+loginBtn.click();
+}
+
+});
+
+
+// ช่องค่าต่าง ๆ
+const settings = [
+{
+name:"general",
+bar:"bar-general",
+min:50,
+max:200
+},
+{
+name:"red",
+bar:"bar-red",
+min:50,
+max:200
+},
+{
+name:"scope",
+bar:"bar-scope",
+min:50,
+max:200
+},
+{
+name:"awm",
+bar:"bar-awm",
+min:50,
+max:200
+}
+];
+
+
+// สุ่มตัวเลข
+function randomNumber(min,max){
+
+return Math.floor(
+Math.random() * (max - min + 1)
+) + min;
 
 }
 
 
-loginBtn.addEventListener(
- "click",
- loginCheck
+// แสดงค่า
+function updateSetting(item,value){
+
+const element =
+document.getElementById(item.name);
+
+const bar =
+document.getElementById(item.bar);
+
+element.textContent = value;
+
+const percent =
+Math.max(
+0,
+Math.min(
+100,
+((value - item.min) /
+(item.max - item.min)) * 100
+)
 );
 
+bar.style.width = percent + "%";
 
-pin.addEventListener(
- "keydown",
- function(e){
+bar.classList.remove("shake");
 
-  if(e.key === "Enter"){
-   loginCheck();
-  }
+void bar.offsetWidth;
 
- }
-);
+bar.classList.add("shake");
+
+}
 
 
-/* =========================
-   SETTINGS DEMO
-========================= */
+// สุ่มการตั้งค่า
+randomBtn.addEventListener("click",function(){
 
-const phone =
-document.getElementById("phone");
+if(!phone.value){
 
-const randomBtn =
-document.getElementById("randomBtn");
+phone.classList.add("invalid");
 
-const resetBtn =
-document.getElementById("resetBtn");
+saved.textContent =
+"กรุณาเลือกรุ่นมือถือก่อน";
 
-const saved =
-document.getElementById("saved");
+return;
 
-const status =
-document.getElementById("status");
+}
+
+phone.classList.remove("invalid");
+
+settings.forEach(function(item){
+
+const value =
+randomNumber(item.min,item.max);
+
+updateSetting(item,value);
+
+});
+
+saved.textContent =
+"✓ สุ่มการตั้งค่าแล้ว";
 
 const wave =
 document.querySelector(".wave");
 
+wave.classList.remove("wave-pulse");
 
-const items = [
+void wave.offsetWidth;
 
- {
-  name:"general",
-  label:"ทั่วไป"
- },
+wave.classList.add("wave-pulse");
 
- {
-  name:"red",
-  label:"จุดแดง"
- },
+});
 
- {
-  name:"scope2",
-  label:"กล้อง 2x"
- },
 
- {
-  name:"scope4",
-  label:"กล้อง 4x"
- },
+// รีเซ็ต
+resetBtn.addEventListener("click",function(){
 
- {
-  name:"awm",
-  label:"AWM"
- },
+settings.forEach(function(item){
 
- {
-  name:"look",
-  label:"มองรอบตัว"
- }
+document.getElementById(item.name).textContent = "--";
 
-];
+document.getElementById(item.bar).style.width = "0";
 
+});
 
-function randomNumber(){
+saved.textContent = "";
 
- return Math.floor(
-  Math.random()*51
- ) + 50;
+phone.value = "";
 
-}
+phone.classList.remove("invalid");
 
-
-function setValue(name,value){
-
- const text =
- document.getElementById(name);
-
- const bar =
- document.getElementById(
-  "bar-"+name
- );
-
- if(text){
-  text.textContent =
-  value;
- }
-
- if(bar){
-
-  bar.style.width =
-  value + "%";
-
-  bar.classList.remove(
-   "shake"
-  );
-
-  void bar.offsetWidth;
-
-  bar.classList.add(
-   "shake"
-  );
-
- }
-
-}
-
-
-function randomSettings(){
-
- if(phone.value === ""){
-
-  phone.classList.add(
-   "invalid"
-  );
-
-  saved.textContent =
-  "กรุณาเลือกรุ่นมือถือก่อน";
-
-  status.textContent =
-  "STATUS : SELECT PHONE";
-
-  return;
-
- }
-
- phone.classList.remove(
-  "invalid"
- );
-
- wave.classList.remove(
-  "wave-pulse"
- );
-
- void wave.offsetWidth;
-
- wave.classList.add(
-  "wave-pulse"
- );
-
-
- items.forEach(function(item){
-
-  setValue(
-   item.name,
-   randomNumber()
-  );
-
- });
-
-
- saved.textContent =
- "✓ สุ่มการตั้งค่าแล้ว";
-
- status.textContent =
- "STATUS : READY";
-
-
- clearTimeout(
-  window.savedTimer
- );
-
- window.savedTimer =
- setTimeout(function(){
-
-  saved.textContent = "";
-
- },3000);
-
-}
-
-
-function resetSettings(){
-
- items.forEach(function(item){
-
-  setValue(
-   item.name,
-   "--"
-  );
-
-  const bar =
-  document.getElementById(
-   "bar-"+item.name
-  );
-
-  if(bar){
-   bar.style.width = "0";
-  }
-
- });
-
- saved.textContent =
- "รีเซ็ตแล้ว";
-
- status.textContent =
- "STATUS : READY";
-
-
- clearTimeout(
-  window.resetTimer
- );
-
- window.resetTimer =
- setTimeout(function(){
-
-  saved.textContent = "";
-
- },2000);
-
-}
-
-
-phone.addEventListener(
- "change",
- function(){
-
-  phone.classList.remove(
-   "invalid"
-  );
-
-  saved.textContent = "";
-
-  status.textContent =
-  "STATUS : READY";
-
- }
-);
-
-
-randomBtn.addEventListener(
- "click",
- randomSettings
-);
-
-
-resetBtn.addEventListener(
- "click",
- resetSettings
-);
+});
 
 </script>
 
 </body>
-  </html>
+</html>
