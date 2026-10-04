@@ -21,7 +21,6 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* จัดให้อยู่กึ่งกลางหน้าจอทั้งแนวตั้งและแนวนอน */
     body {
       display: flex;
       align-items: center;
@@ -29,7 +28,6 @@
       overflow-x: hidden;
     }
 
-    /* พื้นที่ทั้งหมด */
     .page {
       width: 100%;
       max-width: 470px;
@@ -39,7 +37,6 @@
       justify-content: center;
     }
 
-    /* กล่องหลัก */
     .panel {
       width: 100%;
       background: #101419;
@@ -49,7 +46,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.45);
     }
 
-    /* รูปโปรไฟล์ */
     .profile {
       width: 80px;
       height: 80px;
@@ -70,7 +66,6 @@
       display: block;
     }
 
-    /* SHIRTX */
     .title {
       text-align: center;
       font-size: 28px;
@@ -80,7 +75,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* ปุ่มด้านบน */
     .top-buttons {
       width: 100%;
       display: grid;
@@ -116,7 +110,6 @@
       transform: scale(0.97);
     }
 
-    /* รายการฟังก์ชัน */
     .function-list {
       display: flex;
       flex-direction: column;
@@ -141,7 +134,6 @@
       font-weight: 700;
     }
 
-    /* SWITCH */
     .switch {
       position: relative;
       width: 52px;
@@ -183,7 +175,6 @@
       transform: translateX(22px);
     }
 
-    /* SENSIBILIDADE */
     .section-title {
       margin: 18px 0 8px 6px;
       font-size: 13px;
@@ -192,7 +183,6 @@
       letter-spacing: 0.2px;
     }
 
-    /* กล่องความไว */
     .sensitivity {
       width: 100%;
       background: #191e22;
@@ -219,7 +209,6 @@
       font-weight: 800;
     }
 
-    /* RANGE SLIDER */
     .range-wrap {
       width: 100%;
     }
@@ -254,7 +243,6 @@
       cursor: pointer;
     }
 
-    /* หน้าพื้นที่เกม (Select a game) */
     .game-area {
       width: 100%;
       display: none;
@@ -291,7 +279,6 @@
       line-height: 1;
     }
 
-    /* TOAST ALERT */
     .toast {
       position: fixed;
       left: 50%;
@@ -340,7 +327,6 @@
       <!-- หน้า 1: ฟังก์ชัน -->
       <div id="functionTab">
         <div class="function-list">
-          <!-- Precisão -->
           <div class="function-card">
             <span class="function-name">Precisão</span>
             <label class="switch">
@@ -349,7 +335,6 @@
             </label>
           </div>
 
-          <!-- Controle de Recuo -->
           <div class="function-card">
             <span class="function-name">Controle de Recuo</span>
             <label class="switch">
@@ -358,7 +343,6 @@
             </label>
           </div>
 
-          <!-- Otimizar Touch -->
           <div class="function-card">
             <span class="function-name">Otimizar Touch</span>
             <label class="switch">
@@ -367,7 +351,6 @@
             </label>
           </div>
 
-          <!-- Modo FPS -->
           <div class="function-card">
             <span class="function-name">Modo FPS</span>
             <label class="switch">
@@ -377,10 +360,8 @@
           </div>
         </div>
 
-        <!-- หัวข้อ SENSIBILIDADE -->
         <div class="section-title">SENSIBILIDADE</div>
 
-        <!-- ความไว -->
         <div class="sensitivity">
           <div class="sensitivity-head">
             <span class="sensitivity-name">Precisão</span>
@@ -409,13 +390,11 @@
     </main>
   </div>
 
-  <!-- แจ้งเตือน Toast -->
   <div class="toast" id="toast"></div>
 
   <script>
     let currentTab = 'function';
 
-    /* สลับหน้าแท็บ */
     function switchTab(tab) {
       if (currentTab === tab) return;
 
@@ -438,7 +417,7 @@
       }
     }
 
-    /* ฟังก์ชันเปิดเกมที่แก้ไขแล้ว */
+    /* ฟังก์ชันเปิดเกมตรงที่ดึงมาจากพาเนลเดิม */
     function openGame(packageName) {
       showToast("Opening Game...");
 
@@ -448,18 +427,18 @@
         return;
       }
 
-      // รองรับการเปิดผ่าน Chrome/Browser บน Android (เปิดเกมโดยตรง ไม่ไป Play Store)
-      const intentUrl = "intent://#Intent;" +
-        "action=android.intent.action.MAIN;" +
-        "category=android.intent.category.LAUNCHER;" +
-        "package=" + packageName + ";" +
-        "S.browser_fallback_url=android-app%3A%2F%2F" + packageName + ";" +
-        "end;";
+      // แยก Scheme ตามแพ็กเกจเกม
+      let schemeName = "freefire";
+      if (packageName === "com.dts.freefiremax") {
+        schemeName = "freefiremax";
+      }
 
-      window.location.href = intentUrl;
+      // ใช้คำสั่ง Intent Direct จากพาเนลเดิม
+      window.location.href = 
+        "intent://#Intent;scheme=" + schemeName + 
+        ";package=" + packageName + ";end";
     }
 
-    /* แจ้งเตือน Toast */
     function showToast(text) {
       const toast = document.getElementById("toast");
       toast.textContent = text;
@@ -469,7 +448,6 @@
       }, 1500);
     }
 
-    /* เปิด/ปิดฟังก์ชัน */
     function toggleFunction(element, name) {
       if (element.checked) {
         showToast(name + " ON");
@@ -478,7 +456,6 @@
       }
     }
 
-    /* ปรับค่า Sensibilidade */
     function updateRange(range, valueId) {
       const value = Number(range.value);
       const min = Number(range.min);
@@ -496,7 +473,6 @@
         ")";
     }
 
-    /* บังคับค่าเริ่มต้น */
     window.addEventListener("load", function() {
       const switches = document.querySelectorAll('.switch input');
       switches.forEach(function(item) {
