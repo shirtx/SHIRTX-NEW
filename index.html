@@ -440,7 +440,12 @@
 
     /\* เปิดเกม Android \*/
     function openGame(packageName) {
-  window.location.href = "intent://#Intent;package=" + packageName + ";end";
+      window\.location.href =
+        "intent://#Intent;" +
+        "action=android.intent.action.MAIN;" +
+        "category=android.intent.category.LAUNCHER;" +
+        "package=" + packageName +
+        ";end;";
     }
 
     /\* แจ้งเตือน Toast \*/
@@ -496,3 +501,4 @@
   \</script>
 \</body>
 \</html>
+ในนี้คือโค้ดที่ผมสร้างมันจะเสร็จล่ะเเต่ติดจุดเดียวคือปุ่มเข้าเกมปุ่มเข้าเกมมันไม่ได้เข้าเกมโดยตรงผมเลยเอามาให้คุณเเก้ให้ผมเเก้เเค่จุดเดียวนะโค้แอย่างอื่นไม่แตะทำตามที่สั่ง100%
