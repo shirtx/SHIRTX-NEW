@@ -440,12 +440,7 @@
 
     /\* เปิดเกม Android \*/
     function openGame(packageName) {
-      window\.location.href =
-        "intent://#Intent;" +
-        "action=android.intent.action.MAIN;" +
-        "category=android.intent.category.LAUNCHER;" +
-        "package=" + packageName +
-        ";end;";
+  window.location.href = "intent://#Intent;package=" + packageName + ";end";
     }
 
     /\* แจ้งเตือน Toast \*/
