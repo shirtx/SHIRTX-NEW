@@ -1,11 +1,11 @@
-\<!DOCTYPE html>
-\<html lang="th">
-\<head>
-  \<meta charset="UTF-8">
-  \<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  \<title>SHIRTX\</title>
-  \<style>
-    \* {
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SHIRTX</title>
+  <style>
+    * {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
     }
@@ -21,7 +21,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /\* จัดให้อยู่กึ่งกลางหน้าจอทั้งแนวตั้งและแนวนอน \*/
+    /* จัดให้อยู่กึ่งกลางหน้าจอทั้งแนวตั้งและแนวนอน */
     body {
       display: flex;
       align-items: center;
@@ -29,7 +29,7 @@
       overflow-x: hidden;
     }
 
-    /\* พื้นที่ทั้งหมด \*/
+    /* พื้นที่ทั้งหมด */
     .page {
       width: 100%;
       max-width: 470px;
@@ -39,7 +39,7 @@
       justify-content: center;
     }
 
-    /\* กล่องหลัก \*/
+    /* กล่องหลัก */
     .panel {
       width: 100%;
       background: #101419;
@@ -49,7 +49,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.45);
     }
 
-    /\* รูปโปรไฟล์ \*/
+    /* รูปโปรไฟล์ */
     .profile {
       width: 80px;
       height: 80px;
@@ -70,7 +70,7 @@
       display: block;
     }
 
-    /\* SHIRTX \*/
+    /* SHIRTX */
     .title {
       text-align: center;
       font-size: 28px;
@@ -80,7 +80,7 @@
       letter-spacing: 0.5px;
     }
 
-    /\* ปุ่มด้านบน \*/
+    /* ปุ่มด้านบน */
     .top-buttons {
       width: 100%;
       display: grid;
@@ -112,11 +112,11 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 0 #050708;
     }
 
-    .top-btn\:active {
+    .top-btn:active {
       transform: scale(0.97);
     }
 
-    /\* รายการฟังก์ชัน \*/
+    /* รายการฟังก์ชัน */
     .function-list {
       display: flex;
       flex-direction: column;
@@ -141,7 +141,7 @@
       font-weight: 700;
     }
 
-    /\* SWITCH \*/
+    /* SWITCH */
     .switch {
       position: relative;
       width: 52px;
@@ -162,7 +162,7 @@
       transition: .2s;
     }
 
-    .slider\:before {
+    .slider:before {
       content: "";
       position: absolute;
       width: 22px;
@@ -175,15 +175,15 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.4);
     }
 
-    .switch input\:checked + .slider {
+    .switch input:checked + .slider {
       background: #1685ff;
     }
 
-    .switch input\:checked + .slider\:before {
+    .switch input:checked + .slider:before {
       transform: translateX(22px);
     }
 
-    /\* SENSIBILIDADE \*/
+    /* SENSIBILIDADE */
     .section-title {
       margin: 18px 0 8px 6px;
       font-size: 13px;
@@ -192,7 +192,7 @@
       letter-spacing: 0.2px;
     }
 
-    /\* กล่องความไว \*/
+    /* กล่องความไว */
     .sensitivity {
       width: 100%;
       background: #191e22;
@@ -219,7 +219,7 @@
       font-weight: 800;
     }
 
-    /\* RANGE SLIDER \*/
+    /* RANGE SLIDER */
     .range-wrap {
       width: 100%;
     }
@@ -254,7 +254,7 @@
       cursor: pointer;
     }
 
-    /\* หน้าพื้นที่เกม (Select a game) \*/
+    /* หน้าพื้นที่เกม (Select a game) */
     .game-area {
       width: 100%;
       display: none;
@@ -282,7 +282,7 @@
       transition: transform 0.1s ease;
     }
 
-    .game-btn\:active {
+    .game-btn:active {
       transform: scale(0.98);
     }
 
@@ -291,7 +291,7 @@
       line-height: 1;
     }
 
-    /\* TOAST ALERT \*/
+    /* TOAST ALERT */
     .toast {
       position: fixed;
       left: 50%;
@@ -313,111 +313,111 @@
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
-  \</style>
-\</head>
+  </style>
+</head>
 
-\<body>
-  \<div class="page">
-    \<main class="panel">
-      \<!-- รูปโปรไฟล์ -->
-      \<div class="profile">
-        \<img src="profile.jpg" alt="SHIRTX" onerror="this.src='[https://via.placeholder.com/80?text=SHIRTX](https://via.placeholder.com/80?text=SHIRTX)'">
-      \</div>
+<body>
+  <div class="page">
+    <main class="panel">
+      <!-- รูปโปรไฟล์ -->
+      <div class="profile">
+        <img src="profile.jpg" alt="SHIRTX" onerror="this.src='https://via.placeholder.com/80?text=SHIRTX'">
+      </div>
 
-      \<!-- ชื่อ -->
-      \<div class="title">SHIRTX\</div>
+      <!-- ชื่อ -->
+      <div class="title">SHIRTX</div>
 
-      \<!-- ปุ่มด้านบน -->
-      \<div class="top-buttons">
-        \<button id="btnFunction" class="top-btn active" type="button" onclick="switchTab('function')">
+      <!-- ปุ่มด้านบน -->
+      <div class="top-buttons">
+        <button id="btnFunction" class="top-btn active" type="button" onclick="switchTab('function')">
           Function
-        \</button>
-        \<button id="btnGame" class="top-btn" type="button" onclick="switchTab('game')">
+        </button>
+        <button id="btnGame" class="top-btn" type="button" onclick="switchTab('game')">
           Select a game
-        \</button>
-      \</div>
+        </button>
+      </div>
 
-      \<!-- หน้า 1: ฟังก์ชัน -->
-      \<div id="functionTab">
-        \<div class="function-list">
-          \<!-- Precisão -->
-          \<div class="function-card">
-            \<span class="function-name">Precisão\</span>
-            \<label class="switch">
-              \<input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Precisão')">
-              \<span class="slider">\</span>
-            \</label>
-          \</div>
+      <!-- หน้า 1: ฟังก์ชัน -->
+      <div id="functionTab">
+        <div class="function-list">
+          <!-- Precisão -->
+          <div class="function-card">
+            <span class="function-name">Precisão</span>
+            <label class="switch">
+              <input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Precisão')">
+              <span class="slider"></span>
+            </label>
+          </div>
 
-          \<!-- Controle de Recuo -->
-          \<div class="function-card">
-            \<span class="function-name">Controle de Recuo\</span>
-            \<label class="switch">
-              \<input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Controle de Recuo')">
-              \<span class="slider">\</span>
-            \</label>
-          \</div>
+          <!-- Controle de Recuo -->
+          <div class="function-card">
+            <span class="function-name">Controle de Recuo</span>
+            <label class="switch">
+              <input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Controle de Recuo')">
+              <span class="slider"></span>
+            </label>
+          </div>
 
-          \<!-- Otimizar Touch -->
-          \<div class="function-card">
-            \<span class="function-name">Otimizar Touch\</span>
-            \<label class="switch">
-              \<input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Otimizar Touch')">
-              \<span class="slider">\</span>
-            \</label>
-          \</div>
+          <!-- Otimizar Touch -->
+          <div class="function-card">
+            <span class="function-name">Otimizar Touch</span>
+            <label class="switch">
+              <input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Otimizar Touch')">
+              <span class="slider"></span>
+            </label>
+          </div>
 
-          \<!-- Modo FPS -->
-          \<div class="function-card">
-            \<span class="function-name">Modo FPS\</span>
-            \<label class="switch">
-              \<input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Modo FPS')">
-              \<span class="slider">\</span>
-            \</label>
-          \</div>
-        \</div>
+          <!-- Modo FPS -->
+          <div class="function-card">
+            <span class="function-name">Modo FPS</span>
+            <label class="switch">
+              <input type="checkbox" autocomplete="off" onchange="toggleFunction(this, 'Modo FPS')">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
 
-        \<!-- หัวข้อ SENSIBILIDADE -->
-        \<div class="section-title">SENSIBILIDADE\</div>
+        <!-- หัวข้อ SENSIBILIDADE -->
+        <div class="section-title">SENSIBILIDADE</div>
 
-        \<!-- ความไว -->
-        \<div class="sensitivity">
-          \<div class="sensitivity-head">
-            \<span class="sensitivity-name">Precisão\</span>
-            \<span class="value" id="precisionValue">50\</span>
-          \</div>
-          \<div class="range-wrap">
-            \<input id="precisionRange" type="range" min="0" max="100" value="50" autocomplete="off" oninput="updateRange(this, 'precisionValue')">
-          \</div>
-        \</div>
-      \</div>
+        <!-- ความไว -->
+        <div class="sensitivity">
+          <div class="sensitivity-head">
+            <span class="sensitivity-name">Precisão</span>
+            <span class="value" id="precisionValue">50</span>
+          </div>
+          <div class="range-wrap">
+            <input id="precisionRange" type="range" min="0" max="100" value="50" autocomplete="off" oninput="updateRange(this, 'precisionValue')">
+          </div>
+        </div>
+      </div>
 
-      \<!-- หน้า 2: เลือกเกม -->
-      \<div id="gameTab" class="game-area">
-        \<!-- FREE FIRE -->
-        \<button class="game-btn" onclick="openGame('com.dts.freefireth')">
-          \<span class="game-icon">✈\</span>
-          \<span>FREE FIRE\</span>
-        \</button>
+      <!-- หน้า 2: เลือกเกม -->
+      <div id="gameTab" class="game-area">
+        <!-- FREE FIRE -->
+        <button class="game-btn" onclick="openGame('com.dts.freefireth')">
+          <span class="game-icon">✈</span>
+          <span>FREE FIRE</span>
+        </button>
 
-        \<!-- FREE FIRE MAX -->
-        \<button class="game-btn" onclick="openGame('com.dts.freefiremax')">
-          \<span class="game-icon">❖\</span>
-          \<span>FREE FIRE MAX\</span>
-        \</button>
-      \</div>
-    \</main>
-  \</div>
+        <!-- FREE FIRE MAX -->
+        <button class="game-btn" onclick="openGame('com.dts.freefiremax')">
+          <span class="game-icon">❖</span>
+          <span>FREE FIRE MAX</span>
+        </button>
+      </div>
+    </main>
+  </div>
 
-  \<!-- แจ้งเตือน Toast -->
-  \<div class="toast" id="toast">\</div>
+  <!-- แจ้งเตือน Toast -->
+  <div class="toast" id="toast"></div>
 
-  \<script>
+  <script>
     let currentTab = 'function';
 
-    /\* สลับหน้าแท็บ \*/
+    /* สลับหน้าแท็บ */
     function switchTab(tab) {
-      if (currentTab === tab) return; // ถ้านกดหน้าเดิมจะไม่เกิดอะไรขึ้น
+      if (currentTab === tab) return;
 
       currentTab = tab;
       const functionTab = document.getElementById('functionTab');
@@ -438,17 +438,28 @@
       }
     }
 
-    /\* เปิดเกม Android \*/
+    /* ฟังก์ชันเปิดเกมที่แก้ไขแล้ว */
     function openGame(packageName) {
-      window\.location.href =
-        "intent://#Intent;" +
+      showToast("Opening Game...");
+
+      // รองรับกรณีทำเป็น Android App/APK (WebView Native Bridge)
+      if (window.AndroidBridge && window.AndroidBridge.openApp) {
+        window.AndroidBridge.openApp(packageName);
+        return;
+      }
+
+      // รองรับการเปิดผ่าน Chrome/Browser บน Android (เปิดเกมโดยตรง ไม่ไป Play Store)
+      const intentUrl = "intent://#Intent;" +
         "action=android.intent.action.MAIN;" +
         "category=android.intent.category.LAUNCHER;" +
-        "package=" + packageName +
-        ";end;";
+        "package=" + packageName + ";" +
+        "S.browser_fallback_url=android-app%3A%2F%2F" + packageName + ";" +
+        "end;";
+
+      window.location.href = intentUrl;
     }
 
-    /\* แจ้งเตือน Toast \*/
+    /* แจ้งเตือน Toast */
     function showToast(text) {
       const toast = document.getElementById("toast");
       toast.textContent = text;
@@ -458,7 +469,7 @@
       }, 1500);
     }
 
-    /\* เปิด/ปิดฟังก์ชัน \*/
+    /* เปิด/ปิดฟังก์ชัน */
     function toggleFunction(element, name) {
       if (element.checked) {
         showToast(name + " ON");
@@ -467,12 +478,12 @@
       }
     }
 
-    /\* ปรับค่า Sensibilidade \*/
+    /* ปรับค่า Sensibilidade */
     function updateRange(range, valueId) {
       const value = Number(range.value);
       const min = Number(range.min);
       const max = Number(range.max);
-      const percent = ((value - min) / (max - min)) \* 100;
+      const percent = ((value - min) / (max - min)) * 100;
 
       document.getElementById(valueId).textContent = value;
       range.style.background =
@@ -485,8 +496,8 @@
         ")";
     }
 
-    /\* บังคับค่าเริ่มต้น \*/
-    window\.addEventListener("load", function() {
+    /* บังคับค่าเริ่มต้น */
+    window.addEventListener("load", function() {
       const switches = document.querySelectorAll('.switch input');
       switches.forEach(function(item) {
         item.checked = false;
@@ -498,6 +509,6 @@
         updateRange(range, "precisionValue");
       }
     });
-  \</script>
-\</body>
-\</html>
+  </script>
+</body>
+</html>
