@@ -481,17 +481,26 @@
     }
 
     window.addEventListener("load", function() {
-      const switches = document.querySelectorAll('.switch input');
-      switches.forEach(function(item) {
-        item.checked = false;
-      });
+  const switches = document.querySelectorAll('.switch input');
+  switches.forEach(function(item) {
+    item.checked = false;
+  });
 
-      const range = document.getElementById("precisionRange");
-      if (range) {
-        range.value = 50;
-        updateRange(range, "precisionValue");
-      }
-    });
-  </script>
+  const range = document.getElementById("precisionRange");
+  if (range) {
+    range.value = 50;
+    updateRange(range, "precisionValue");
+  }
+});
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js");
+  });
+}
+</script>
+
 </body>
 </html>
